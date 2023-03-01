@@ -1,0 +1,16 @@
+.line {
+  border: 3px solid #198754;
+}
+.bg-img {
+  background-image: url(pictures/warehouse.jpg);
+  min-height: 65vh;
+  background-position: center;
+  background-size: cover;
+}
+.bg-img2 {
+  background-image: url(pictures/Carton.jpg);
+  min-height: 20vh;
+}
+.bg-img3 {
+  background-image: url(pictures/code.jpg);
+}
