@@ -19,13 +19,13 @@ const packages = [{
   to: 'Mistress Ravenfeather',
   trackingNumber: 'jffd147'
 },
-// {
-//   priorityLevel: 'standard',
-//   isFragile: false,
-//   weight: 4,
-//   to: 'B. Robert Brown',
-//   trackingNumber: 'acdc145'
-// },
+{
+  priorityLevel: 'standard',
+  isFragile: false,
+  weight: 4,
+  to: 'B. Robert Brown',
+  trackingNumber: 'acdc145'
+},
 {
   priorityLevel: 'express',
   isFragile: true,
@@ -33,13 +33,13 @@ const packages = [{
   to: 'Chancellor Wallace',
   trackingNumber: '4b2l0z'
 },
-// {
-//   priorityLevel: 'standard',
-//   isFragile: false,
-//   weight: 5,
-//   to: 'Sarah Sharm',
-//   trackingNumber: '8081baz'
-// },
+{
+  priorityLevel: 'standard',
+  isFragile: false,
+  weight: 5,
+  to: 'Sarah Sharm',
+  trackingNumber: '8081baz'
+},
 {
   priorityLevel: 'free',
   isFragile: true,
@@ -58,11 +58,7 @@ function drawPackages(packages) {
     packageDiv.innerHTML = `
       <p>Tracking Number: ${p.trackingNumber}</p>
       <p>To: ${p.to}</p>
-      <p>Priority: ${p.priorityLevel}</p>
-      <p>Weight: ${p.weight} lbs</p>
-      <p>Fragile: ${p.isFragile ? 'Yes' : 'No'}</p>
       <hr>
-      <br>
     `;
     packageElem.appendChild(packageDiv);
     console.log(packageElem, 'packages')
