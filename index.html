@@ -19,10 +19,13 @@
       <div class="col-1 px-0">
         <h3>FILTER:</h3>
         </div>
-        <div class="col-5">
-          <button class="btn btn-outline-light mx-4">Heavy</button>
-          <button class="btn btn-outline-light mx-4">Priority</button>
-          <button class="btn btn-outline-light mx-4">Fragile</button>
+        <div class="col-10">
+          <button class="btn btn-outline-light mx-4" onclick="drawHeavyPackages()">Heavy</button>
+          <button class="btn btn-outline-light mx-4" onclick="drawPackages(filterByPriorityLevel(packages, 'express'))">Express</button>
+          <button class="btn btn-outline-light mx-4" onclick="drawPackages(filterByPriorityLevel(packages, 'standard'))">Standard</button>
+          <button class="btn btn-outline-light mx-4" onclick="drawPackages(filterByPriorityLevel(packages, 'free'))">Free</button>
+          <button class="btn btn-outline-light mx-4" onclick="drawFragilePackages()">Fragile</button>
+          <button class="btn btn-outline-light mx-4 " onclick="drawAllPackages()">All Packages</button>
         </div>
     </section>
 
@@ -34,9 +37,9 @@
       <div class="col-5 pe-0"><hr class="line"> </div>
     </section>
     <section class="container-fluid bg-img ">
-      <div class="row justify-content-around py-5 ">
-        <div class="col bg-dark">
-          <p id="packages"></p>
+      <div class="row py-5 ">
+        <div id="packages" class="col bg-dark d-flex justify-content-around">
+          
         </div>
       </div>
 

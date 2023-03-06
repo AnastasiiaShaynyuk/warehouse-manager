@@ -19,13 +19,13 @@ const packages = [{
   to: 'Mistress Ravenfeather',
   trackingNumber: 'jffd147'
 },
-{
-  priorityLevel: 'standard',
-  isFragile: false,
-  weight: 4,
-  to: 'B. Robert Brown',
-  trackingNumber: 'acdc145'
-},
+// {
+//   priorityLevel: 'standard',
+//   isFragile: false,
+//   weight: 4,
+//   to: 'B. Robert Brown',
+//   trackingNumber: 'acdc145'
+// },
 {
   priorityLevel: 'express',
   isFragile: true,
@@ -33,13 +33,13 @@ const packages = [{
   to: 'Chancellor Wallace',
   trackingNumber: '4b2l0z'
 },
-{
-  priorityLevel: 'standard',
-  isFragile: false,
-  weight: 5,
-  to: 'Sarah Sharm',
-  trackingNumber: '8081baz'
-},
+// {
+//   priorityLevel: 'standard',
+//   isFragile: false,
+//   weight: 5,
+//   to: 'Sarah Sharm',
+//   trackingNumber: '8081baz'
+// },
 {
   priorityLevel: 'free',
   isFragile: true,
@@ -50,16 +50,43 @@ const packages = [{
 
 let packageElem = document.getElementById('packages')
 
-function drawPackages() {
-  console.log('drawing packages');
-  let template = '';
+
+function drawPackages(packages) {
+  packageElem.innerHTML = '';
   packages.forEach(p => {
-    template += p.to
-  }) 
-  console.log('all names');
+    const packageDiv = document.createElement('p');
+    packageDiv.innerHTML = `
+      <p>Tracking Number: ${p.trackingNumber}</p>
+      <p>To: ${p.to}</p>
+      <p>Priority: ${p.priorityLevel}</p>
+      <p>Weight: ${p.weight} lbs</p>
+      <p>Fragile: ${p.isFragile ? 'Yes' : 'No'}</p>
+      <hr>
+      <br>
+    `;
+    packageElem.appendChild(packageDiv);
+    console.log(packageElem, 'packages')
+  });
 }
 
+function drawFragilePackages() {
+  const fragilePackages = packages.filter(p => p.isFragile);
+  drawPackages(fragilePackages);
+}
 
+function filterByPriorityLevel(packages, priorityLevel) {
+  return packages.filter(p => p.priorityLevel === priorityLevel);
+  drawPackages(priorityPackages);
+}
 
-drawPackages()
+function drawHeavyPackages() {
+  const heavyPackages = packages.filter(p => p.weight > 5);
+  drawPackages(heavyPackages);
+}
+
+function drawAllPackages() {
+  drawPackages(packages);
+}
+
+drawPackages(packages);
 
